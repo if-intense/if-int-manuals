@@ -1,0 +1,231 @@
+html {
+    position: relative;
+    height: 100%;
+  }
+  
+body {
+  position: relative;
+  height: 100%;
+  // background: #eee;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  background: rgb(177,198,230);
+    background: linear-gradient(135deg, rgba(177,198,230,1) 0%, rgba(59,68,126,1) 100%);
+}
+
+
+// top-page
+
+  .wrapper {
+    
+    .top-page-center {
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform:translate(-50%,-50%);
+      
+      h1 {
+        font-size:3em;
+        color:#fff;
+        text-shadow: 1px 3px 6px rgba(0,0,0,0.66);
+      }
+      h4 {
+        color:#fff;
+      }
+    }
+  }
+  
+
+
+// i-Column
+
+.br_1200 {
+  display: none;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  // font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  
+
+  .container-fluid {
+    .main-area {
+      box-shadow: 3px 6px 18px rgba(0,0,0,0.66);
+      border:#1F456E 4px solid;
+      width:80%;
+      margin:0 auto;
+      .summary-text {
+        text-align: left;
+        background:#1F456E;
+        box-shadow: 3px 6px 12px rgba(0,0,0,0.66);
+        
+        h2 {
+            color:#fff;
+            font-size:1.5em;
+            padding:20px;
+        }
+        p {
+            background:#fff;
+            padding:1vh 2vw;
+            line-height: 2em;
+            span.category {
+              color:#fff;
+              background:#442DCC;
+              padding:3px 15px;
+              font-size: 0.8em;
+              border-radius: 20px;
+              font-size: 1.1em;
+            }
+            span.button {
+              background:#FF8D26;
+              border-radius: 20px;
+              padding:5px 15px;
+              color:#fff;
+              margin:0 5px;
+              font-size:1.1em;
+            }
+            span.edit {
+              color:#fff;
+              background:#3067AF;
+              padding:8px;
+              border-radius: 50%;
+              margin-right:5px;
+            }
+            span.primary {
+              color:#fff;
+              background:#3067AF;
+              padding:5px 20px;
+              border-radius: 15px;
+              margin:0 5px;
+            }
+            em, strong {
+              font-style: normal;
+              font-weight: bold;
+              padding:0 5px;
+              font-size: 1.1em;
+            }
+        }
+
+      }
+      .image {
+        width:80%;
+        margin:2vh auto;
+        box-shadow: 3px 6px 6px rgba(0,0,0,0.66);
+      }  
+    }
+  }
+  .page {
+    position:absolute;
+    top:5%;
+    right:5%;
+  }
+}
+
+.floatingButtonWrap {
+	display: block;
+	position: fixed;
+	bottom: 45px;
+	right: 45px;
+	z-index: 999999999;
+}
+.floatingButtonInner {
+	position: relative;
+}
+.floatingButton {
+	display: block;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	background: -webkit-linear-gradient(135deg, rgba(40,72,119,1) 0%, rgba(34,34,34,1) 100%);
+	background: -o-linear-gradient(135deg, rgba(40,72,119,1) 0%, rgba(34,34,34,1) 100%);
+	background: linear-gradient(135deg, rgba(40,72,119,1) 0%, rgba(34,34,34,1) 100%);
+	color: #fff;
+	line-height: 50px;
+	position: absolute;
+	border-radius: 50% 50%;
+	bottom: 0px;
+	right: 0px;
+	border: 5px solid #fff;
+  box-shadow: 3px 6px 6px rgba(0,0,0,0.66);
+	opacity: 1;
+	transition: all 0.4s;
+	.fa {
+		font-size: 15px !important;
+		transform: rotate(0deg);
+		transition: all 0.4s;
+	}
+	&:hover {
+		opacity: 1;
+		color: #fff;
+	}
+	&:focus {
+		opacity: 1;
+		color: #fff;
+	}
+	&:active {
+		opacity: 1;
+		color: #fff;
+	}
+}
+.floatingButton.open {
+	opacity: 1;
+	color: #fff;
+	.fa {
+		transform: rotate(270deg);
+	}
+}
+.floatingMenu {
+	position: absolute;
+	bottom: 60px;
+	right: 0px;
+	display: none;
+	li {
+		width: 100%;
+		float: right;
+		list-style: none;
+		text-align: right;
+		margin-bottom: 5px;
+		a {
+			padding: 8px 15px;
+			display: inline-block;
+			background: #284877;
+			color: #ffffff;
+			border-radius: 5px;
+			overflow: hidden;
+			white-space: nowrap;
+			transition: all 0.4s;
+			-webkit-box-shadow: 1px 3px 5px rgba(211, 224, 255, 0.5);
+			box-shadow: 1px 3px 5px rgba(211, 224, 255, 0.5);
+			&:hover {
+				margin-right: 10px;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width:1200px) {
+  .br_1200 {
+    display: block;
+  }
+}

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>microCMS マニュアル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/> -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css"/> 
+
+    <!-- font-awesome -->
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
+
+
+  <script>
+    $(document).ready(function(){
+        $('.floatingButton').on('click',
+            function(e){
+                e.preventDefault();
+                $(this).toggleClass('open');
+                if($(this).children('.fa').hasClass('fa-plus'))
+                {
+                    $(this).children('.fa').removeClass('fa-plus');
+                    $(this).children('.fa').addClass('fa-close');
+                } 
+                else if ($(this).children('.fa').hasClass('fa-close')) 
+                {
+                    $(this).children('.fa').removeClass('fa-close');
+                    $(this).children('.fa').addClass('fa-plus');
+                }
+                $('.floatingMenu').stop().slideToggle();
+            }
+        );
+        $(this).on('click', function(e) {
+          
+            var container = $(".floatingButton");
+            
+            if (!container.is(e.target) && $('.floatingButtonWrap').has(e.target).length === 0) 
+            {
+                if(container.hasClass('open'))
+                {
+                    container.removeClass('open');
+                }
+                if (container.children('.fa').hasClass('fa-close')) 
+                {
+                    container.children('.fa').removeClass('fa-close');
+                    container.children('.fa').addClass('fa-plus');
+                }
+                $('.floatingMenu').hide();
+            }
+          
+            
+            if(!container.is(e.target) && ($('.floatingMenu').has(e.target).length > 0)) 
+            {
+                $('.floatingButton').removeClass('open');
+                $('.floatingMenu').stop().slideToggle();
+            } 
+        });
+    });
+  </script>
+
+  <!-- <script>
+    document.ready(function(){
+        document.getElementByClassName("floatingButton").on('click',
+            function(e){
+                e.preventDefault();
+                this.classList.toggle("open");
+                if(this.children('.fa').classList.contains("fa-plus"))
+                {
+                    this.children('.fa').classList.remove("fa-plus");
+                    this.children('.fa').classList.add("fa-close");
+                } 
+                else if (this.children('.fa').classList.contains("fa-close")) 
+                {
+                    this.children('.fa').classList.remove("fa-close");
+                    this.children('.fa').classList.add("fa-plus");
+                }
+                document.getElementByClassName("floatingMenu").stop().slideToggle();
+            }
+        );
+        this.addEventListener('click', (e) => {
+          
+            let container = document.getElementByClassName("floatingButton");
+            
+            if (!container.is(e.target) && document.getElementByClassName("floatingButtonWrap").has(e.target).length === 0) 
+            {
+                if(container.classList.contains("open"))
+                {
+                    container.classList.remove("open");
+                }
+                if (container.children('.fa').classList.contains("fa-close")) 
+                {
+                    container.children('.fa').classList.remove("fa-close");
+                    container.children('.fa').classList.add("fa-plus");
+                }
+                document.getElementByClassName("floatingMenu").style.display = "none";
+            }
+          
+            
+            if(!container.is(e.target) && (document.getElementByClassName("floatingMenu").has(e.target).length > 0)) 
+            {
+                document.getElementByClassName("floatingButton").classList.remove("open");
+                document.getElementByClassName("floatingMenu").stop().slideToggle();
+            } 
+        });
+    });
+  </script> -->
+  
+  <body>
+    
+    
+
+
+    <div class="swiper mySwiper">
+      <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">i-Column</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+          </ul>
+        </div>
+      </nav> -->  
+     
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          
+            <div class="container-fluid p-5">
+             
+                <div class="main-area">
+                  
+                  <div class="summary-text">
+                    <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200">（コンテンツ・マネジメント・システム）</h2>
+                    <p>microCMSのウェブサイトで右上のログインをクリックしてください。<br>
+                    <a href="https://www.microcms.io">https://www.microcms.io</a></p>
+                  </div>
+                  <div class="image">
+                    <img src="../images/01-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                  </div>
+                </div>
+                <div class="page">
+                  1 / 14
+                </div>
+            </div>
+            
+        </div>
+        <div class="swiper-slide">
+            <div class="container-fluid p-5">
+              <div class="main-area">
+                  <div class="summary-text">
+                    <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200">（コンテンツ・マネジメント・システム）</h2>
+                    <p>ログインメールアドレス：admin@invade.co.jp<br>
+                    パスワード：<input type="button" onclick="Msg1()" value="パスワード表示する"><span id="myText"></span></p>
+                  </div>
+                  <div class="image">
+                    <img src="../images/02-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                  </div>
+              </div>
+              <div class="page">
+                2 / 14
+              </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200">（コンテンツ・マネジメント・システム）</h2>
+                  <p>ログイン後、microCMSのダッシュボードの画面が出てきます。i-Columnをクリックしてください。</p>
+                </div>
+                <div class="image">
+                  <img src="../images/03-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              3 / 14
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200">（コンテンツ・マネジメント・システム）</h2>
+                  <p>押すとi-Columnのダッシュボード画面が表示されます。
+                    コラムを登録する際には左側の青いダッシュボードで <span class="category"><i class="fas fa-list"></i> コラム</span> が選択されているようにしてください。
+                    コラムを追加する時は、右上の <span class="button">＋追加</span> を押してください。
+                       <br> 1. ダッシュボードの <strong>カテゴリ</strong> では、<em>メーカー</em>の追加・編集ができます。
+                       <br> 2. メディアの <strong>〇〇件のアイテム</strong> をクリックすると<em>画像</em>のアップロード・削除などができます。</p>
+                </div>
+                <div class="image">
+                  <img src="../images/04-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              4 / 14
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200"><span>（コンテンツ・マネジメント・システム）</span></h2>
+                  <p>コラムのタイトルを入力してください。（i-Column内の項目は全て必須です）</p>
+                </div>
+                <div class="image">
+                  <img src="../images/05-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              5 / 14
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200"><span>（コンテンツ・マネジメント・システム）</span></h2>
+                  <p>コラムのメーカーを選択してください。</p>
+                </div>
+                <div class="image">
+                  <img src="../images/05-screen-2.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              6 / 14
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200">（コンテンツ・マネジメント・システム）</h2>
+                  <p>選択できるのは一つのメーカーのみになります。</p>
+                </div>
+                <div class="image">
+                  <img src="../images/05-screen-3.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              7 / 14
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200"><span>（コンテンツ・マネジメント・システム）</span></h2>
+                  <p>i-Columnの他に記事を反映させるサイトを選択してください。</p>
+                </div>
+                <div class="image">
+                  <img src="../images/06-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              8 / 14
+            </div>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200"><span>（コンテンツ・マネジメント・システム）</span></h2>
+                  <p><span class="edit"><i class="fas fa-pencil-alt"></i></span>をクリックして、画像を追加してください。</p>
+                </div>
+                <div class="image">
+                  <img src="../images/08-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              9 / 14
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200"><span>（コンテンツ・マネジメント・システム）</span></h2>
+                  <p>右上の<span class="button"><i class="fas fa-plus"></i> アップロード</span>を押してPCに保存してある画像をアップしてください。<br>事前に画像は正四角形に切り取っておいてください。(最低：500px × 500px ~ 1080px × 1080px)<br>アップロードを確認した後
+                    <span class="primary">この画像を使用する
+                  </span>を押してください。</p>
+                </div>
+                <div class="image">
+                  <img src="../images/09-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              10 / 14
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200"><span>（コンテンツ・マネジメント・システム）</span></h2>
+                  <p>
+                    要約文・本文を書いてください。要約文は100文字以内に収めてください。本文には、太文字にしたり、色を付けたりとスタイリングができます。<br>
+                    また、動画をはめ込むこともできます。文字制限はないですが、1000文字以内が理想の投稿です。<br>
+                    <span class="button">公開</span>を押すとi-Columnのページと指定したページに反映されます。
+                  </p>
+                </div>
+                <div class="image">
+                  <img src="../images/10-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              11 / 14
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200"><span>（コンテンツ・マネジメント・システム）</span></h2>
+                  <p>i-Columnのページへ反映されます。</p>
+                </div>
+                <div class="image">
+                  <img src="../images/11-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              12 / 14
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200"><span>（コンテンツ・マネジメント・システム）</span></h2>
+                  <p>8ページ目で選択したサイトにも反映されますので、確認してください。</p>
+                </div>
+                <div class="image">
+                  <img src="../images/12-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              13 / 14
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container-fluid p-5">
+            <div class="main-area">
+                <div class="summary-text">
+                  <h2>i-Columnの記事を投稿・編集するCMS<br class="br_1200"><span>（コンテンツ・マネジメント・システム）</span></h2>
+                  <p>このウェブサイト（https://www.microcms.io）でシステム関連のトラブルがあったら社長室・藤原へ。画面下のチャットマークはmicroCMSと直でやりとりすることになります。</p>
+                </div>
+                <div class="image">
+                  <img src="../images/13-screen.png" alt="microCMSとは何か？" class="img-fluid">
+                </div>
+            </div>
+            <div class="page">
+              14 / 14
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+
+
+    <div class="floatingButtonWrap">
+      <div class="floatingButtonInner">
+          <a href="#" class="floatingButton">
+              <i class="fa fa-plus icon-default"></i>
+          </a>
+          <ul class="floatingMenu">
+              <li>
+                  <a href="index.html">i-Column (microCMS)</a>
+              </li>
+              <li>
+                  <a href="../index.html">HOME</a>
+              </li>
+          </ul>
+      </div>
+    </div>    
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="../js/index.js"></script>
+    <script>
+      function Msg1() {
+        document.getElementById('myText').innerHTML = 'V7fhUQaEV5IU';
+      }
+    </script>
+  </body>
+</html>
